@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myesa Academy 2025 - Evento Presencial | 21 de Noviembre</title>
+    <meta name="description" content="Regístrate al evento Myesa Academy 2025 en World Trade Center CDMX. 21 de noviembre 2025 en Salones Palenque y Montealbán.">
+    <meta name="keywords" content="Myesa Academy, evento motos, World Trade Center CDMX, noviembre 2025">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuración de Tailwind personalizada -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'myesa-orange': '#FF3A00',
+                        'myesa-orange-light': '#FF9248',
+                        'myesa-blue': '#0022FF',
+                        'myesa-black': '#1A1A1A',
+                        'myesa-gray-1': '#403B3A',
+                        'myesa-gray-2': '#626061',
+                        'myesa-gray-3': '#838078',
+                        'myesa-gray-4': '#A29E96',
+                        'myesa-white': '#E7E7E7',
+                        'myesa-white-2': '#F5F5F5',
+                        'myesa-bg': '#F1F1F1',
+                    },
+                    fontFamily: {
+                        'work': ['Work Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fuente Sharp Grotesk (usando una alternativa similar) */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+        .font-sharp {
+            font-family: 'Outfit', 'Work Sans', sans-serif;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animación de carrusel infinito */
+        @keyframes scroll-infinite {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll-infinite 30s linear infinite;
+        }
+
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* Transiciones suaves */
+        .transition-all-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Input focus states */
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 58, 0, 0.2);
+        }
+
+        /* Error message styling */
+        .error-message {
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success message */
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .success-popup.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 200px;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon.rotated {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="font-work antialiased bg-myesa-bg">
+
+    <!-- HERO SECTION -->
+    <header id="hero" class="bg-myesa-bg overflow-hidden py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Contenido Principal Hero -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+                <!-- Columna Izquierda: Logo y CTA -->
+                <div class="flex flex-col gap-12 lg:gap-16">
+
+                    <!-- Logo y Ubicación -->
+                    <div class="flex flex-col gap-8 lg:gap-10">
+                        <!-- Logo Myesa Academy -->
+                        <div class="w-full max-w-md">
+                            <img
+                                src="https://www.figma.com/api/mcp/asset/710d1319-beff-4dff-9e05-e955dcd10811"
+                                alt="Myesa Academy 2025 Logo"
+                                class="w-full h-auto object-contain"
+                                loading="eager"
+                            />
+                        </div>
+
+                        <!-- Ubicación -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-12 flex-shrink-0">
+                                <img
+                                    src="https://www.figma.com/api/mcp/asset/cb1e177b-cc65-40ce-968c-1368e143c2f7"
+                                    alt="Ubicación"
+                                    class="w-full h-full object-contain"
+                                />
+                            </div>
+                            <div class="font-work text-myesa-black">
+                                <p class="text-base md:text-lg lg:text-xl font-medium uppercase mb-1">
+                                    Salones <span class="font-bold">Palenque</span> y <span class="font-bold">Montealbán</span>
+                                </p>
+                                <p class="text-sm md:text-base lg:text-lg">
+                                    <span class="font-bold">World Trade Center</span>, CDMX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón CTA -->
+                    <button
+                        id="ctaButton"
+                        class="bg-myesa-black border border-myesa-orange rounded-full px-6 py-4 flex items-center gap-3 w-fit hover:bg-myesa-orange transition-all-smooth group"
+                    >
+                        <span class="font-work font-semibold text-myesa-white uppercase text-sm md:text-base">
+                            Regístrate ahora
+                        </span>
+                        <svg class="w-5 h-5 transform rotate-90 transition-all-smooth group-hover:translate-y-1" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 0L10 20M10 20L20 10M10 20L0 10" stroke="#E7E7E7" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Columna Derecha: Productos -->
+                <div class="relative w-full h-64 md:h-80 lg:h-96 flex items-center justify-center">
+                    <!-- Box de productos -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img
+                            src="https://www.figma.com/api/mcp/asset/36256d80-4e5b-47f5-a852-36d856fef7a1"
+                            alt="Productos Myesa - Caja 3"
+                            class="absolute w-3/5 h-auto object-contain top-1/4 left-1/4 transform -translate-x-1/4"
+                            loading="lazy"
+                        />
+                        <img
+                            src="https://www.figma.com/api/mcp/asset/854981e5-ccee-4748-8bfd-74114660a443"
+                            alt="Productos Myesa - Caja 1"
+                            class="absolute w-2/5 h-auto object-contain top-0 right-0 transform translate-x-1/4 -translate-y-1/4"
+                            loading="lazy"
+                        />
+                        <img
+                            src="https://www.figma.com/api/mcp/asset/06985176-2d5c-4b2c-88eb-81479c54b4a6"
+                            alt="Productos Myesa - Caja 2"
+                            class="absolute w-2/5 h-auto object-contain bottom-0 left-0"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fecha del Evento -->
+            <div class="mt-12 lg:mt-16 flex items-center justify-center px-4">
+                <div class="relative flex items-center justify-center gap-0">
+                    <!-- Día -->
+                    <div class="bg-myesa-orange px-4 py-3 z-10">
+                        <p class="font-sharp font-bold text-3xl md:text-4xl lg:text-5xl text-myesa-white-2 uppercase text-center">
+                            21
+                        </p>
+                    </div>
+
+                    <!-- Mes -->
+                    <div class="relative bg-myesa-black px-8 md:px-16 lg:px-24 py-3">
+                        <p class="font-sharp font-medium text-2xl md:text-3xl lg:text-4xl text-myesa-white uppercase text-center">
+                            noviembre
+                        </p>
+                    </div>
+
+                    <!-- Año -->
+                    <div class="bg-myesa-blue px-6 py-3 z-10">
+                        <p class="font-sharp font-bold text-3xl md:text-4xl lg:text-5xl text-myesa-white-2 uppercase text-center">
+                            2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premios/Descuentos -->
+            <div class="mt-8 flex items-center justify-center">
+                <div class="w-full max-w-md h-24">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/6ffd9bfd-d585-4d71-9a76-f5a8bf9c95b2"
+                        alt="Descuentos disponibles"
+                        class="w-full h-full object-contain"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CARRUSEL DE MARCAS -->
+    <section class="bg-myesa-bg py-8 lg:py-12 overflow-hidden">
+        <div class="flex items-center gap-8 md:gap-11">
+            <div class="flex gap-8 md:gap-11 animate-scroll whitespace-nowrap">
+                <!-- Primera repetición de logos -->
+                <img src="https://www.figma.com/api/mcp/asset/d6f9be94-9e2a-4265-91fd-70b191cdff89" alt="Michelin" class="h-6 md:h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/139230bf-6fa9-4ae3-bf10-848e047e7b0f" alt="Kenda" class="h-4 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/1eec366a-1f70-420a-9d34-b7e8a1caa4b2" alt="Vipol" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/2d6806e3-acb4-43a3-ae1b-71dc6d708898" alt="Kohl" class="h-4 md:h-4 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/175734a6-e91f-4f7e-b7be-0f19b3b5b44f" alt="Shad" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/f03ab027-0e49-4ae1-ba3e-93f76e7eac71" alt="Ferodo" class="h-6 md:h-6 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/ace7c9c9-eb58-463a-907a-88f7d4c60a39" alt="Jupeso" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/e36384f7-e49d-46e5-bd69-fe095fe1ec08" alt="K7" class="h-7 md:h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/d0073b74-0cdc-48e1-9098-78b6cf1c8c1e" alt="KYB" class="h-8 md:h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/51ee57da-eb06-433f-a652-2e3d9dde8d80" alt="Motul" class="h-6 md:h-6 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+
+                <!-- Segunda repetición (para loop infinito) -->
+                <img src="https://www.figma.com/api/mcp/asset/d6f9be94-9e2a-4265-91fd-70b191cdff89" alt="Michelin" class="h-6 md:h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/139230bf-6fa9-4ae3-bf10-848e047e7b0f" alt="Kenda" class="h-4 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/1eec366a-1f70-420a-9d34-b7e8a1caa4b2" alt="Vipol" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/2d6806e3-acb4-43a3-ae1b-71dc6d708898" alt="Kohl" class="h-4 md:h-4 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/175734a6-e91f-4f7e-b7be-0f19b3b5b44f" alt="Shad" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/f03ab027-0e49-4ae1-ba3e-93f76e7eac71" alt="Ferodo" class="h-6 md:h-6 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/ace7c9c9-eb58-463a-907a-88f7d4c60a39" alt="Jupeso" class="h-5 md:h-5 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/e36384f7-e49d-46e5-bd69-fe095fe1ec08" alt="K7" class="h-7 md:h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/d0073b74-0cdc-48e1-9098-78b6cf1c8c1e" alt="KYB" class="h-8 md:h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.figma.com/api/mcp/asset/51ee57da-eb06-433f-a652-2e3d9dde8d80" alt="Motul" class="h-6 md:h-6 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="relative bg-myesa-black py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 opacity-30">
+            <img
+                src="https://www.figma.com/api/mcp/asset/ad427016-55d0-4732-8f9b-85805664078b"
+                alt=""
+                class="w-full h-full object-cover"
+                loading="lazy"
+            />
+        </div>
+
+        <div class="relative max-w-6xl mx-auto">
+            <!-- Título -->
+            <div class="flex items-center justify-center gap-4 mb-12">
+                <div class="w-11 h-11">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/4df7d091-fbcf-42d8-ad17-120955ba6803"
+                        alt=""
+                        class="w-full h-full object-contain"
+                    />
+                </div>
+                <div class="font-sharp text-myesa-white-2 uppercase">
+                    <p class="text-lg md:text-xl font-light">Revive la experiencia</p>
+                    <p class="text-2xl md:text-3xl lg:text-4xl font-medium">Myesa Academy</p>
+                </div>
+            </div>
+
+            <!-- Video -->
+            <div class="w-full max-w-4xl mx-auto">
+                <div class="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/84fe656d-d409-4660-a076-28ecbc86fa15"
+                        alt="Video de Myesa Academy edición anterior - World Trade Center"
+                        class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                    />
+                    <!-- Play button overlay (opcional) -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="bg-myesa-orange rounded-full p-6 hover:bg-myesa-orange-light transition-colors cursor-pointer">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <section id="registro" class="bg-gradient-to-b from-[#070707] via-myesa-black to-myesa-gray-1 py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+            <!-- Título -->
+            <div class="flex items-center justify-center gap-4 mb-12">
+                <div class="w-11 h-11">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/4df7d091-fbcf-42d8-ad17-120955ba6803"
+                        alt=""
+                        class="w-full h-full object-contain"
+                    />
+                </div>
+                <div class="font-sharp text-myesa-white-2 uppercase">
+                    <p class="text-2xl md:text-3xl lg:text-4xl font-medium">¡Regístrate!</p>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="relative bg-white bg-opacity-95 rounded-lg px-6 md:px-12 lg:px-16 py-10 md:py-12">
+                <!-- Imagen de fondo del formulario -->
+                <div class="absolute inset-0 opacity-5 pointer-events-none">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/1ddce0e2-5142-4dbc-be81-824a5103092c"
+                        alt=""
+                        class="w-full h-full object-cover rounded-lg"
+                    />
+                </div>
+
+                <form id="registrationForm" class="relative space-y-6" novalidate>
+                    <!-- Campo: Nombre -->
+                    <div class="flex flex-col">
+                        <label for="nombre" class="font-work font-semibold text-myesa-gray-1 text-base mb-3">
+                            Nombre
+                        </label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            class="bg-myesa-white rounded-sm h-9 px-4 text-myesa-black font-work transition-all-smooth border-2 border-transparent focus:border-myesa-orange"
+                            required
+                            aria-required="true"
+                        />
+                        <span class="error-message text-red-600 font-work font-medium" id="nombre-error"></span>
+                    </div>
+
+                    <!-- Campo: Nombre negocio -->
+                    <div class="flex flex-col">
+                        <label for="nombreNegocio" class="font-work font-semibold text-myesa-gray-1 text-base mb-3">
+                            Nombre negocio
+                        </label>
+                        <input
+                            type="text"
+                            id="nombreNegocio"
+                            name="nombreNegocio"
+                            class="bg-myesa-white rounded-sm h-9 px-4 text-myesa-black font-work transition-all-smooth border-2 border-transparent focus:border-myesa-orange"
+                            required
+                            aria-required="true"
+                        />
+                        <span class="error-message text-red-600 font-work font-medium" id="nombreNegocio-error"></span>
+                    </div>
+
+                    <!-- Campo: No Cliente -->
+                    <div class="flex flex-col">
+                        <label for="noCliente" class="font-work font-semibold text-myesa-gray-1 text-base mb-3">
+                            No Cliente
+                        </label>
+                        <input
+                            type="text"
+                            id="noCliente"
+                            name="noCliente"
+                            class="bg-myesa-white rounded-sm h-9 px-4 text-myesa-black font-work transition-all-smooth border-2 border-transparent focus:border-myesa-orange"
+                            required
+                            aria-required="true"
+                        />
+                        <span class="error-message text-red-600 font-work font-medium" id="noCliente-error"></span>
+                    </div>
+
+                    <!-- Campo: Nombre del promotor -->
+                    <div class="flex flex-col">
+                        <label for="nombrePromotor" class="font-work font-semibold text-myesa-gray-1 text-base mb-3">
+                            Nombre del promotor
+                        </label>
+                        <input
+                            type="text"
+                            id="nombrePromotor"
+                            name="nombrePromotor"
+                            class="bg-myesa-white rounded-sm h-9 px-4 text-myesa-black font-work transition-all-smooth border-2 border-transparent focus:border-myesa-orange"
+                            required
+                            aria-required="true"
+                        />
+                        <span class="error-message text-red-600 font-work font-medium" id="nombrePromotor-error"></span>
+                    </div>
+
+                    <!-- Nota -->
+                    <div class="pt-2">
+                        <p class="font-work font-medium text-myesa-gray-1 text-sm">
+                            *Solo se permite 1 registro por persona
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Sombra decorativa -->
+                <div class="mt-8 w-full h-10 opacity-30">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/50840f4c-7562-4c56-adaf-2f2522181b10"
+                        alt=""
+                        class="w-full h-full object-contain mix-blend-multiply"
+                    />
+                </div>
+
+                <!-- Botón Submit -->
+                <div class="flex justify-center mt-8">
+                    <button
+                        type="submit"
+                        form="registrationForm"
+                        id="submitButton"
+                        class="bg-myesa-orange border border-myesa-orange-light rounded-full px-8 py-4 flex items-center gap-3 hover:bg-myesa-orange-light transition-all-smooth group disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <span class="font-work font-semibold text-myesa-white uppercase text-base">
+                            Enviar
+                        </span>
+                        <svg class="w-5 h-5 transition-all-smooth group-hover:translate-x-1" viewBox="0 0 20 20" fill="none">
+                            <path d="M0 10L20 10M20 10L10 0M20 10L10 20" stroke="#E7E7E7" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="bg-gradient-to-b from-myesa-gray-1 via-myesa-gray-1 to-myesa-gray-2 border-t border-myesa-white py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+            <!-- Título -->
+            <div class="flex items-center justify-center gap-4 mb-12">
+                <div class="w-11 h-11">
+                    <img
+                        src="https://www.figma.com/api/mcp/asset/4df7d091-fbcf-42d8-ad17-120955ba6803"
+                        alt=""
+                        class="w-full h-full object-contain"
+                    />
+                </div>
+                <div class="font-sharp text-myesa-white-2 uppercase">
+                    <p class="text-2xl md:text-3xl lg:text-4xl font-medium">Preguntas frecuentes</p>
+                </div>
+            </div>
+
+            <!-- Acordeón de preguntas -->
+            <div class="space-y-0">
+                <!-- Pregunta 1 (abierta por defecto) -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿A qué hora empieza Myesa Academy?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">−</span>
+                    </button>
+                    <div class="accordion-content active px-5 pb-4">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base">
+                            El registro inicia a las 10 am donde obtendrás tu gafete de acceso, la última conferencia termina a las 7:30 pm
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Cómo puedo asistir a Myesa Academy?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            Debes registrarte a través de este formulario. Una vez confirmado tu registro, recibirás un correo de confirmación con todos los detalles del evento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Cuál es la fecha límite para registrarme?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            Puedes registrarte hasta el 20 de noviembre de 2025, o hasta agotar cupo. Te recomendamos registrarte lo antes posible para asegurar tu lugar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Puedo llevar acompañante al evento?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            Cada persona debe registrarse individualmente. Si deseas asistir con un acompañante, este deberá completar su propio registro.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Habrá alimentos accesibles?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            Sí, habrá servicio de coffee break y alimentos disponibles durante el evento para todos los asistentes registrados.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Tiene costo el evento?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            No, el evento es completamente gratuito para clientes y socios comerciales de Myesa registrados.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 7 -->
+                <div class="border border-myesa-gray-3 accordion-item">
+                    <button class="accordion-trigger w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors">
+                        <span class="font-work font-semibold text-myesa-white text-base">
+                            ¿Está permitido el acceso a niños?
+                        </span>
+                        <span class="accordion-icon text-myesa-white text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-5">
+                        <p class="font-work font-medium text-myesa-gray-4 text-base pb-4">
+                            Este es un evento profesional dirigido principalmente a adultos del sector. Para información específica sobre menores, contacta al organizador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-10 px-4 md:px-8 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 border-r-0 lg:border-r lg:border-myesa-gray-3 pb-8">
+                <!-- Columna Izquierda -->
+                <div class="flex flex-col md:flex-row items-start gap-8 lg:pr-12">
+                    <!-- Logo Myesa -->
+                    <div class="w-64 flex-shrink-0">
+                        <img
+                            src="https://www.figma.com/api/mcp/asset/aa9cf528-e593-48de-927d-2d99f2149527"
+                            alt="Myesa Academy 2025"
+                            class="w-full h-auto object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <!-- Info y redes sociales -->
+                    <div class="flex flex-col gap-6">
+                        <p class="font-work text-myesa-black text-base">
+                            Síguenos en nuestras redes sociales.
+                        </p>
+
+                        <!-- Redes Sociales -->
+                        <div class="flex items-center gap-6">
+                            <!-- Facebook -->
+                            <a href="#" class="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors" aria-label="Facebook">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Twitter/X -->
+                            <a href="#" class="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors" aria-label="Twitter">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+
+                            <!-- YouTube -->
+                            <a href="#" class="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors" aria-label="YouTube">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Grupo Motomex -->
+                <div class="flex flex-col items-end gap-6 lg:pl-12">
+                    <p class="font-work text-myesa-black text-base">
+                        Grupo Motomex
+                    </p>
+                    <div class="w-full max-w-md">
+                        <img
+                            src="https://www.figma.com/api/mcp/asset/1170fa27-ec12-4394-8d91-fa29924418dc"
+                            alt="Grupo Motomex - Motomex y Afina"
+                            class="w-full h-auto object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-myesa-gray-3 pt-5 mt-8">
+                <p class="font-work text-myesa-gray-3 text-base text-center">
+                    Copyright © 2025 Motos y Equipos
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay para mensajes -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Popup de éxito -->
+    <div id="successPopup" class="success-popup">
+        <div class="text-center">
+            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="font-sharp text-2xl font-bold text-myesa-black mb-2">¡Registro exitoso!</h3>
+            <p class="font-work text-myesa-gray-1 mb-6">Gracias por registrarte a Myesa Academy 2025. Pronto recibirás un correo de confirmación.</p>
+            <button id="closePopup" class="bg-myesa-orange text-white px-6 py-2 rounded-full font-work font-semibold hover:bg-myesa-orange-light transition-colors">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========================================
+            // VARIABLES
+            // ========================================
+            const form = document.getElementById('registrationForm');
+            const submitButton = document.getElementById('submitButton');
+            const ctaButton = document.getElementById('ctaButton');
+            const overlay = document.getElementById('overlay');
+            const successPopup = document.getElementById('successPopup');
+            const closePopup = document.getElementById('closePopup');
+
+            const inputs = {
+                nombre: document.getElementById('nombre'),
+                nombreNegocio: document.getElementById('nombreNegocio'),
+                noCliente: document.getElementById('noCliente'),
+                nombrePromotor: document.getElementById('nombrePromotor')
+            };
+
+            const errors = {
+                nombre: document.getElementById('nombre-error'),
+                nombreNegocio: document.getElementById('nombreNegocio-error'),
+                noCliente: document.getElementById('noCliente-error'),
+                nombrePromotor: document.getElementById('nombrePromotor-error')
+            };
+
+            // ========================================
+            // SMOOTH SCROLL AL FORMULARIO
+            // ========================================
+            ctaButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const registroSection = document.getElementById('registro');
+                registroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Focus en el primer input después del scroll
+                setTimeout(() => {
+                    inputs.nombre.focus();
+                }, 800);
+            });
+
+            // ========================================
+            // VALIDACIÓN EN TIEMPO REAL
+            // ========================================
+            Object.keys(inputs).forEach(key => {
+                const input = inputs[key];
+                const error = errors[key];
+
+                input.addEventListener('blur', function() {
+                    validateField(key, input, error);
+                });
+
+                input.addEventListener('input', function() {
+                    if (error.classList.contains('show')) {
+                        validateField(key, input, error);
+                    }
+                });
+            });
+
+            function validateField(fieldName, input, errorElement) {
+                const value = input.value.trim();
+
+                if (value === '') {
+                    showError(input, errorElement, 'Este campo es obligatorio');
+                    return false;
+                }
+
+                if (value.length < 2) {
+                    showError(input, errorElement, 'Debe tener al menos 2 caracteres');
+                    return false;
+                }
+
+                // Validación específica para No Cliente (solo números y letras)
+                if (fieldName === 'noCliente' && !/^[a-zA-Z0-9]+$/.test(value)) {
+                    showError(input, errorElement, 'Solo se permiten letras y números');
+                    return false;
+                }
+
+                hideError(input, errorElement);
+                return true;
+            }
+
+            function showError(input, errorElement, message) {
+                errorElement.textContent = message;
+                errorElement.classList.add('show');
+                input.classList.add('border-red-500');
+            }
+
+            function hideError(input, errorElement) {
+                errorElement.textContent = '';
+                errorElement.classList.remove('show');
+                input.classList.remove('border-red-500');
+            }
+
+            // ========================================
+            // SUBMIT DEL FORMULARIO
+            // ========================================
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validar todos los campos
+                let isValid = true;
+                Object.keys(inputs).forEach(key => {
+                    if (!validateField(key, inputs[key], errors[key])) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    return;
+                }
+
+                // Deshabilitar botón y mostrar loading
+                submitButton.disabled = true;
+                const originalContent = submitButton.innerHTML;
+                submitButton.innerHTML = `
+                    <span class="font-work font-semibold text-myesa-white uppercase text-base">
+                        Enviando...
+                    </span>
+                    <div class="spinner"></div>
+                `;
+
+                // Simular envío (aquí conectarías con tu backend)
+                setTimeout(() => {
+                    // Resetear formulario
+                    form.reset();
+
+                    // Restaurar botón
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalContent;
+
+                    // Mostrar mensaje de éxito
+                    showSuccessMessage();
+
+                    // En producción, aquí harías la llamada real al servidor:
+                    /*
+                    fetch('/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            nombre: inputs.nombre.value,
+                            nombreNegocio: inputs.nombreNegocio.value,
+                            noCliente: inputs.noCliente.value,
+                            nombrePromotor: inputs.nombrePromotor.value
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            form.reset();
+                            showSuccessMessage();
+                        } else {
+                            alert('Error al registrar. Por favor intenta nuevamente.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error al registrar. Por favor intenta nuevamente.');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalContent;
+                    });
+                    */
+                }, 1500);
+            });
+
+            // ========================================
+            // MOSTRAR/OCULTAR POPUP DE ÉXITO
+            // ========================================
+            function showSuccessMessage() {
+                overlay.classList.add('show');
+                successPopup.classList.add('show');
+            }
+
+            function hideSuccessMessage() {
+                overlay.classList.remove('show');
+                successPopup.classList.remove('show');
+            }
+
+            closePopup.addEventListener('click', hideSuccessMessage);
+            overlay.addEventListener('click', hideSuccessMessage);
+
+            // ========================================
+            // ACCORDION DE PREGUNTAS FRECUENTES
+            // ========================================
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const trigger = item.querySelector('.accordion-trigger');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon');
+
+                trigger.addEventListener('click', function() {
+                    const isActive = content.classList.contains('active');
+
+                    // Cerrar todos los demás acordeones
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.accordion-content').classList.remove('active');
+                            otherItem.querySelector('.accordion-icon').textContent = '+';
+                        }
+                    });
+
+                    // Toggle el acordeón actual
+                    if (isActive) {
+                        content.classList.remove('active');
+                        icon.textContent = '+';
+                    } else {
+                        content.classList.add('active');
+                        icon.textContent = '−';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
