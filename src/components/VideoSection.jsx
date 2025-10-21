@@ -1,10 +1,13 @@
+import bgNoise from '../assets/video_section/BG-Noise.webp';
+import arrowSubtitle from '../assets/arrow_subtitle.svg';
+
 export default function VideoSection() {
   return (
     <section className="relative bg-myesa-black py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 opacity-30">
         <img
-          src="https://www.figma.com/api/mcp/asset/ad427016-55d0-4732-8f9b-85805664078b"
+          src={bgNoise}
           alt=""
           className="w-full h-full object-cover"
           loading="lazy"
@@ -16,7 +19,7 @@ export default function VideoSection() {
         <div className="flex items-center justify-center gap-4 mb-12">
           <div className="w-11 h-11">
             <img
-              src="https://www.figma.com/api/mcp/asset/4df7d091-fbcf-42d8-ad17-120955ba6803"
+              src={arrowSubtitle}
               alt=""
               className="w-full h-full object-contain"
             />
@@ -29,13 +32,11 @@ export default function VideoSection() {
 
         {/* Video */}
         <div className="w-full max-w-4xl mx-auto">
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-            <img
-              src="https://www.figma.com/api/mcp/asset/84fe656d-d409-4660-a076-28ecbc86fa15"
-              alt="Video de Myesa Academy edición anterior - World Trade Center"
-              className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-myesa-gray-1">
+            {/* Placeholder para video - puedes reemplazar con un iframe de YouTube o tag <video> */}
+            <div className="w-full h-full flex items-center justify-center text-myesa-white-2">
+              <p className="text-xl font-work">Video de Myesa Academy 2024</p>
+            </div>
             {/* Play button overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-myesa-orange rounded-full p-6 hover:bg-myesa-orange-light transition-colors cursor-pointer">

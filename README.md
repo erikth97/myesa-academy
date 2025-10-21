@@ -4,20 +4,24 @@ Landing page para el evento **Myesa Academy 2025** en World Trade Center CDMX.
 
 ## 🚀 Tecnologías
 
-- **React 19** - Biblioteca de UI
-- **Vite** - Build tool y dev server
-- **Tailwind CSS 3** - Framework de estilos utility-first
-- **JavaScript (ES6+)** - Lógica de la aplicación
+- **React 19.0.0** - Biblioteca de UI (última versión)
+- **Vite 6.0.3** - Build tool ultrarrápido
+- **Tailwind CSS 3.4.17** - Framework de estilos utility-first
+- **JavaScript ES6+** - Lógica modular
+- **Assets locales** - Todas las imágenes y fuentes están en el proyecto
 
 ## 📋 Características
 
 ✅ Diseño 100% responsive (Mobile First)
 ✅ Formulario de registro con validación en tiempo real
-✅ Carrusel infinito de marcas patrocinadoras
+✅ Carrusel infinito de 20 marcas patrocinadoras
 ✅ Sección de video con overlay interactivo
 ✅ FAQ con acordeón interactivo
 ✅ Smooth scroll y animaciones fluidas
 ✅ Optimizado para SEO y accesibilidad
+✅ **Fuente Sharp Grotesk** integrada localmente
+✅ **Todas las imágenes** servidas localmente (sin URLs externas)
+✅ **100% independiente** - No requiere conexión con WordPress
 
 ## 🛠️ Instalación y Uso
 
@@ -61,23 +65,35 @@ Abre tu navegador en [http://localhost:5173](http://localhost:5173)
 
 ```
 myesa-academy/
-├── public/                 # Archivos estáticos
 ├── src/
+│   ├── assets/            # Assets locales
+│   │   ├── fonts/        # Fuentes locales
+│   │   │   ├── Sharp_Grotesk/  # Fuente principal del diseño
+│   │   │   └── Work_Sans/      # Fuente secundaria
+│   │   ├── hero_section/       # Imágenes del hero
+│   │   │   ├── logosMYESA/    # 20 logos de marcas patrocinadoras
+│   │   │   ├── Myesa.webp
+│   │   │   ├── PaperBox1.webp, PaperBox2.webp, PaperBox3.webp
+│   │   │   └── place_icon.svg
+│   │   ├── video_section/      # Assets de video
+│   │   ├── form_section/       # Fondos del formulario
+│   │   ├── footer/            # Logos del footer
+│   │   └── arrow_subtitle.svg
 │   ├── components/        # Componentes React
 │   │   ├── Hero.jsx       # Sección hero con CTA
-│   │   ├── BrandCarousel.jsx  # Carrusel de marcas
+│   │   ├── BrandCarousel.jsx  # Carrusel de 20 marcas
 │   │   ├── VideoSection.jsx   # Sección de video
-│   │   ├── RegistrationForm.jsx  # Formulario de registro
-│   │   ├── FAQ.jsx        # Preguntas frecuentes
+│   │   ├── RegistrationForm.jsx  # Formulario con validación
+│   │   ├── FAQ.jsx        # Preguntas frecuentes (accordion)
 │   │   └── Footer.jsx     # Footer con redes sociales
 │   ├── App.jsx            # Componente principal
-│   ├── main.jsx           # Punto de entrada
-│   └── index.css          # Estilos globales y Tailwind
-├── index.html
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── postcss.config.js
+│   ├── main.jsx           # Punto de entrada React
+│   └── index.css          # @font-face + Tailwind + animaciones
+├── index.html             # Entry point HTML
+├── package.json           # Dependencias
+├── vite.config.js         # Config de Vite
+├── tailwind.config.js     # Colores y fuentes custom
+└── postcss.config.js      # Autoprefixer
 ```
 
 ## 🎨 Colores de Marca

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Fonts (no subir tipografías al repositorio)
+src/assets/fonts/

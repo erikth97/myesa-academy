@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import arrowSubtitle from '../assets/arrow_subtitle.svg';
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const faqs = [
     {
@@ -39,44 +40,44 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-myesa-gray-1 via-myesa-gray-1 to-myesa-gray-2 border-t border-myesa-white py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
+    <section className="bg-gradient-to-b from-myesa-gray-1 via-[50%] via-myesa-gray-1 to-myesa-gray-2 border-t border-myesa-white py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-24">
       <div className="max-w-4xl mx-auto">
         {/* Título */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <div className="w-11 h-11">
+        <div className="flex items-center justify-center gap-4 mb-12 lg:mb-14">
+          <div className="w-10 h-10 lg:w-11 lg:h-11">
             <img
-              src="https://www.figma.com/api/mcp/asset/4df7d091-fbcf-42d8-ad17-120955ba6803"
+              src={arrowSubtitle}
               alt=""
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="font-sharp text-myesa-white-2 uppercase">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-medium">Preguntas frecuentes</p>
+          <div className="font-sharp text-myesa-white-2 uppercase text-center lg:text-left">
+            <p className="text-xl md:text-2xl lg:text-4xl font-medium leading-none">Preguntas frecuentes</p>
           </div>
         </div>
 
         {/* Acordeón de preguntas */}
-        <div className="space-y-0">
+        <div className="space-y-0 max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-myesa-gray-3">
+            <div key={index} className="border border-myesa-gray-3 border-t-0 first:border-t">
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-5 py-4 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-30 transition-colors"
+                className="w-full px-5 py-6 md:py-7 flex items-center justify-between gap-4 text-left hover:bg-myesa-gray-1 hover:bg-opacity-20 transition-colors"
               >
-                <span className="font-work font-semibold text-myesa-white text-base">
+                <span className="font-work font-semibold text-myesa-white text-sm md:text-base flex-1">
                   {faq.question}
                 </span>
-                <span className="text-myesa-white text-2xl flex-shrink-0">
+                <span className="text-myesa-white text-xl flex-shrink-0 w-6 h-6 flex items-center justify-center">
                   {activeIndex === index ? '−' : '+'}
                 </span>
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  activeIndex === index ? 'max-h-48' : 'max-h-0'
+                  activeIndex === index ? 'max-h-64' : 'max-h-0'
                 }`}
               >
-                <div className="px-5 pb-4">
-                  <p className="font-work font-medium text-myesa-gray-4 text-base">
+                <div className="px-5 pb-6 bg-myesa-gray-1 bg-opacity-10">
+                  <p className="font-work text-myesa-white text-sm md:text-base leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

@@ -1,3 +1,6 @@
+import myesaFooterLogo from '../assets/footer/myesa_footer.png';
+import motomexLogo from '../assets/footer/MotomexLogo.webp';
+
 export default function Footer() {
   return (
     <footer className="bg-white py-10 px-4 md:px-8 lg:px-12">
@@ -8,7 +11,7 @@ export default function Footer() {
             {/* Logo Myesa */}
             <div className="w-64 flex-shrink-0">
               <img
-                src="https://www.figma.com/api/mcp/asset/aa9cf528-e593-48de-927d-2d99f2149527"
+                src={myesaFooterLogo}
                 alt="Myesa Academy 2025"
                 className="w-full h-auto object-contain"
                 loading="lazy"
@@ -66,7 +69,7 @@ export default function Footer() {
             </p>
             <div className="w-full max-w-md">
               <img
-                src="https://www.figma.com/api/mcp/asset/1170fa27-ec12-4394-8d91-fa29924418dc"
+                src={motomexLogo}
                 alt="Grupo Motomex - Motomex y Afina"
                 className="w-full h-auto object-contain"
                 loading="lazy"
