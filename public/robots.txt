@@ -1,0 +1,6 @@
+# robots.txt para Myesa Academy 2025
+
+User-agent: *
+Allow: /
+
+Sitemap: https://myesaacademy.com/expomoto/sitemap.xml

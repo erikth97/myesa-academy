@@ -1,88 +1,130 @@
 import myesaFooterLogo from '../assets/footer/myesa_footer.png';
 import motomexLogo from '../assets/footer/MotomexLogo.webp';
+import motosYEquiposLogo from '../assets/footer/Motos y Equipos.png';
+import fbIcon from '../assets/footer/socialmedia/FB-Icon.svg';
+import igIcon from '../assets/footer/socialmedia/IG-Icon.svg';
+import youtubeIcon from '../assets/footer/socialmedia/Youtube-Icon.svg';
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-10 px-4 md:px-8 lg:px-12">
+    <footer className="bg-white py-8 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 border-r-0 lg:border-r lg:border-myesa-gray-3 pb-8">
-          {/* Columna Izquierda */}
-          <div className="flex flex-col md:flex-row items-start gap-8 lg:pr-12">
-            {/* Logo Myesa */}
-            <div className="w-64 flex-shrink-0">
-              <img
-                src={myesaFooterLogo}
-                alt="Myesa Academy 2025"
-                className="w-full h-auto object-contain"
-                loading="lazy"
-              />
-            </div>
+        {/* Contenedor principal horizontal */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-6 border-b border-gray-300">
+          {/* Sección Izquierda: Logo MYESA */}
+          <div className="flex-shrink-0">
+            <img
+              src={myesaFooterLogo}
+              alt="Myesa Academy 2025"
+              className="h-24 w-auto object-contain"
+              loading="lazy"
+            />
+          </div>
 
-            {/* Info y redes sociales */}
-            <div className="flex flex-col gap-6">
-              <p className="font-work text-myesa-black text-base">
-                Síguenos en nuestras redes sociales.
-              </p>
+          {/* Sección Central: Redes Sociales */}
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <p className="font-work text-myesa-black text-sm md:text-base">
+              Síguenos en nuestras redes sociales.
+            </p>
 
-              {/* Redes Sociales */}
-              <div className="flex items-center gap-6">
-                {/* Facebook */}
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors"
-                  aria-label="Facebook"
-                >
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
+            {/* Iconos de Redes Sociales */}
+            <div className="flex items-center justify-center gap-3">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/MotoYEquip.SA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-8 md:h-8 flex-shrink-0 hover:scale-125 transition-all duration-300 ease-out"
+                aria-label="Facebook"
+              >
+                <img
+                  src={fbIcon}
+                  alt="Facebook"
+                  className="w-full h-full object-contain hover:brightness-110 hover:saturate-150 transition-all duration-300"
+                />
+              </a>
 
-                {/* Twitter/X */}
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors"
-                  aria-label="Twitter"
-                >
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/motosyequipos/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-8 md:h-8 flex-shrink-0 hover:scale-125 transition-all duration-300 ease-out ml-2"
+                aria-label="Instagram"
+              >
+                <img
+                  src={igIcon}
+                  alt="Instagram"
+                  className="w-full h-full object-contain hover:brightness-110 hover:saturate-150 transition-all duration-300"
+                />
+              </a>
 
-                {/* YouTube */}
-                <a
-                  href="#"
-                  className="w-9 h-9 bg-myesa-black rounded-full flex items-center justify-center hover:bg-myesa-orange transition-colors"
-                  aria-label="YouTube"
-                >
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-              </div>
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@MotosYEquiposSA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 md:w-8 md:h-8 flex-shrink-0 hover:scale-125 transition-all duration-300 ease-out ml-2"
+                aria-label="YouTube"
+              >
+                <img
+                  src={youtubeIcon}
+                  alt="YouTube"
+                  className="w-full h-full object-contain hover:brightness-110 hover:saturate-150 transition-all duration-300"
+                />
+              </a>
             </div>
           </div>
 
-          {/* Columna Derecha: Grupo Motomex */}
-          <div className="flex flex-col items-end gap-6 lg:pl-12">
-            <p className="font-work text-myesa-black text-base">
-              Grupo Motomex
-            </p>
-            <div className="w-full max-w-md">
-              <img
-                src={motomexLogo}
-                alt="Grupo Motomex - Motomex y Afina"
-                className="w-full h-auto object-contain"
-                loading="lazy"
-              />
+          {/* Sección Derecha: Motos y Equipos con línea divisoria */}
+          <div className="flex items-center gap-8">
+            {/* Línea divisoria vertical (solo visible en desktop) */}
+            <div className="hidden lg:block w-px h-20 bg-gray-300"></div>
+
+            <div className="flex flex-col items-center lg:items-start gap-3">
+              <p className="font-work text-myesa-black text-sm md:text-base">
+                Motos y Equipos, S.A.
+              </p>
+              <a
+                href="https://www.motosyequipos.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="Visitar Motos y Equipos"
+              >
+                <img
+                  src={motosYEquiposLogo}
+                  alt="Motos y Equipos"
+                  className="h-10 md:h-16 w-auto object-contain"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-myesa-gray-3 pt-5 mt-8">
-          <p className="font-work text-myesa-gray-3 text-base text-center">
+        {/* Copyright y Logo Motomex */}
+        <div className="pt-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* Copyright - Justificado a la izquierda */}
+          <p className="font-work text-gray-400 text-base md:text-sm text-center md:text-left">
             Copyright © 2025 Motos y Equipos
           </p>
+
+          {/* Logo Grupo Motomex - Justificado a la derecha */}
+          <a
+            href="https://www.grupomotomex.com.mx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+            aria-label="Visitar Grupo Motomex"
+          >
+            <img
+              src={motomexLogo}
+              alt="Grupo Motomex - 65 Años"
+              className="h-8 md:h-12 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
         </div>
       </div>
     </footer>

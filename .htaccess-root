@@ -1,0 +1,21 @@
+# .htaccess para la RAÍZ del dominio (myesaacademy.com)
+# Este archivo debe ir en la carpeta PUBLIC_HTML raíz
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redireccionar myesaacademy.com a myesaacademy.com/expomoto
+    # Solo si no estamos ya en /expomoto o /wp-admin (WordPress)
+    RewriteCond %{REQUEST_URI} !^/expomoto/
+    RewriteCond %{REQUEST_URI} !^/wp-admin/
+    RewriteCond %{REQUEST_URI} !^/wp-content/
+    RewriteCond %{REQUEST_URI} !^/wp-includes/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /expomoto/ [L,R=301]
+
+    # Si acceden directamente a myesaacademy.com (sin archivo)
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteRule ^$ /expomoto/ [L,R=301]
+</IfModule>

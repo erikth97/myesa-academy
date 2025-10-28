@@ -14,7 +14,7 @@ function App() {
 
     // Focus en el primer input después del scroll
     setTimeout(() => {
-      const firstInput = document.getElementById('nombre');
+      const firstInput = document.getElementById('clientNumber');
       firstInput?.focus();
     }, 800);
   };

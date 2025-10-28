@@ -121,6 +121,34 @@ html {
   animation: float-slow 8s ease-in-out infinite;
 }
 
+/* Animación de pulso para flecha del botón CTA */
+@keyframes pulse-arrow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(2px) scale(1.05);
+  }
+}
+
+.animate-pulse-arrow {
+  animation: pulse-arrow 2s ease-in-out infinite;
+}
+
+/* Animación de flotación para el icono de flecha de subtítulos */
+@keyframes float-arrow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-arrow {
+  animation: float-arrow 2.5s ease-in-out infinite;
+}
+
 /* Cubo rotativo 3D */
 .perspective-1000 {
   perspective: 1000px;
@@ -189,5 +217,106 @@ html {
   }
   100% {
     transform: rotateY(360deg);
+  }
+}
+
+/* Animación para el popup de éxito */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+/* Animación para el icono de check del popup */
+@keyframes checkBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-5deg);
+  }
+  85% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-check-bounce {
+  animation: checkBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+  opacity: 0;
+}
+
+/* Custom scrollbar for dropdown */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #A29E96;
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #838078;
+}
+
+/* Firefox */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #A29E96 #f5f5f5;
+}
+
+/* Liquid glass button - efecto hover naranja ligero */
+.group:hover .liquid-glass-button {
+  background-color: rgba(255, 179, 128, 0.25) !important;
+  border-color: rgba(255, 179, 128, 0.4) !important;
+  box-shadow: 0 8px 32px 0 rgba(255, 146, 72, 0.35) !important;
+  transform: scale(1.1);
+}
+
+/* Animación de Slide Down para campos de invitados */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    max-height: 1000px;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de Fade In para elementos individuales */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
