@@ -270,7 +270,6 @@ export default function RegistrationForm() {
       }
 
       // Si llegamos aquí, el envío fue exitoso
-      console.log('✅ Formulario enviado exitosamente');
       setSubmitStatus('success');
       setShowSuccessPopup(true);
 
@@ -290,7 +289,6 @@ export default function RegistrationForm() {
       setErrors({});
 
     } catch (error) {
-      console.error('Error al enviar formulario:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
