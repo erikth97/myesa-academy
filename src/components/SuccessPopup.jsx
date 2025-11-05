@@ -88,7 +88,7 @@ export default function SuccessPopup({ isOpen, onClose }) {
 
               {/* Mensaje secundario */}
               <p className="font-work text-white text-center text-sm md:text-base lg:text-[16px] leading-relaxed max-w-[320px]">
-                En breve se te enviará un WhatsApp para confirmar tu registro
+                En breve recibirás un mensaje por WhatsApp para confirmar tu registro. Si no lo recibes, revisa que tu número sea correcto e intenta nuevamente. Si el problema continúa, contacta a tu promotor o asesor.
               </p>
             </div>
           </div>
