@@ -324,6 +324,13 @@ export default function RegistrationForm() {
           </h2>
         </div>
 
+        {/* Disclaimer */}
+        <div className="flex items-center justify-center -mt-6 lg:-mt-8">
+          <p className="font-work text-myesa-white-2 text-center text-sm md:text-base lg:text-lg" style={{ fontWeight: 600 }}>
+            Kit de bienvenida limitado a los primeros <span className="text-myesa-orange">265</span> registrados
+          </p>
+        </div>
+
         {/* Form Container */}
         <div className="w-full" style={{ maxWidth: '765px' }}>
           <form
