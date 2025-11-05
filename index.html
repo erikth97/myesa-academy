@@ -1,5 +1,16 @@
 <!doctype html>
 <html lang="es">
+  <!--
+    ============================================
+    Myesa Academy 2025 - Landing Page
+    ============================================
+    Desarrollado por: Erik Fabian Tamayo
+    Rol: Principal Software Engineer
+    Tecnologías: React 19, Vite 6, Tailwind CSS 3
+    Cliente: Grupo Motomex - Motos y Equipos
+    Fecha: Octubre 2025
+    ============================================
+  -->
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/MyesaAcademy-Escudo.svg" />
@@ -10,6 +21,17 @@
     <meta name="keywords" content="Myesa Academy, evento motos, World Trade Center CDMX, noviembre 2025, capacitaciones, motocicletas, refacciones" />
     <meta name="author" content="Grupo Motomex - Motos y Equipos" />
     <meta name="robots" content="index, follow" />
+
+    <!-- Developer & Designer Metadata -->
+    <meta name="developer" content="Erik Fabian Tamayo - Principal Software Engineer" />
+    <meta name="designer" content="Erik Fabian Tamayo - Principal Software Engineer" />
+    <meta name="creator" content="Erik Fabian Tamayo" />
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" content="Erik Fabian Tamayo" />
+    <meta name="DC.contributor" content="Erik Fabian Tamayo - Principal Software Engineer" />
+    <meta name="DC.title" content="Myesa Academy 2025 - Evento Presencial" />
+    <meta name="DC.date" content="2025-10-28" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -28,7 +50,7 @@
     <meta name="twitter:image" content="https://myesaacademy.com/expomoto/og-image.jpg" />
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#FF3A00" />
+    <meta name="theme-color" content="#1A1A1A" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +58,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <title>Myesa Academy 2025 - Evento Presencial | 21 de Noviembre</title>
+
+    <!-- Structured Data - Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Myesa Academy 2025",
+      "url": "https://myesaacademy.com/expomoto/",
+      "description": "Evento presencial de capacitación, demostraciones y descuentos exclusivos para distribuidores",
+      "inLanguage": "es-MX",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grupo Motomex - Motos y Equipos",
+        "url": "https://www.grupomotomex.com.mx/"
+      },
+      "developer": {
+        "@type": "Person",
+        "name": "Erik Fabian Tamayo",
+        "jobTitle": "Principal Software Engineer",
+        "description": "Desarrollador Principal del sitio web Myesa Academy 2025"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Erik Fabian Tamayo",
+        "jobTitle": "Principal Software Engineer"
+      },
+      "about": {
+        "@type": "Event",
+        "name": "Myesa Academy 2025",
+        "startDate": "2025-11-21T10:00:00-06:00",
+        "endDate": "2025-11-21T20:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "World Trade Center CDMX",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ciudad de México",
+            "addressCountry": "MX"
+          }
+        }
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
